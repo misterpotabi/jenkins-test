@@ -17,10 +17,10 @@ pipeline {
                 sh './jenkins/scripts/test.sh' 
             }
         }
-        stage('Deploy') {
-            steps {          
-                sh './jenkins/scripts/deliver.sh'
-                input message : 'Jika sudah berhasil menjalankan klik ("Proceed") untuk mengakhiri'
+        stage('Deploy') { 
+            steps {
+                sh './jenkins/scripts/deliver.sh' 
+                input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)' 
                 sh './jenkins/scripts/kill.sh'
            } 
         }   
